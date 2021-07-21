@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,6 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         mBottomNV.setSelectedItemId(R.id.home);
+
+        RadioGroup ragroup=findViewById(R.id.rbgroup);
+        RadioButton all = findViewById(R.id.rb_all);
+       // cust=findViewById(R.id.rb_custom);
+       // all.setChecked(true);
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
