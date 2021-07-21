@@ -47,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
                 //현재 입력되어 있는 것을 가져온다
                 String userID = et_reg_id.getText().toString();
                 String userName = et_reg_name.getText().toString();
-                String userPw = et_reg_pw.getText().toString();
+                String userPassword = et_reg_pw.getText().toString();
                 String userMajor = et_reg_major.getText().toString();
                 int userGrade = Integer.parseInt(et_reg_grade.getText().toString());
 
@@ -55,7 +55,6 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            Toast.makeText(getApplicationContext(), "회원 등록 시도", Toast.LENGTH_SHORT).show();
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
                             if (success) {
@@ -73,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
                 };
 
                 // 서버로 volley를 이용하여 요청을 함.
-                RegisterRequest registerRequest = new RegisterRequest(userID, userName, userPw, userMajor, userGrade, responseListener);
+                RegisterRequest registerRequest = new RegisterRequest(userID, userName, userPassword, userMajor, userGrade, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                 queue.add(registerRequest);
 

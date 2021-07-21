@@ -46,7 +46,8 @@ public class LoginActivity extends AppCompatActivity {
                 String userID = et_id.getText().toString();
                 String userPw = et_pw.getText().toString();
 
-                /*Response.Listener<String> responseListener = new Response.Listener<String>() {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
@@ -57,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String userPw = jsonObject.getString("userPassword");
 
                                 Toast.makeText(getApplicationContext(), "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+
                                 intent.putExtra("userID",userID);
                                 intent.putExtra("userPassword",userPw);
                                 startActivity(intent);
@@ -75,11 +76,6 @@ public class LoginActivity extends AppCompatActivity {
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                 queue.add(loginRequest);
 
-
-                 */
-
-                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(intent);
             }
         });
     }

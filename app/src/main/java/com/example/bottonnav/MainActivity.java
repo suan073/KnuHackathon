@@ -38,11 +38,12 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     private LocalDate selectedDate;
 
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
@@ -137,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     private void setMonthView() {
         monthYearText.setText(monthYearFromDate(selectedDate));
         ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
@@ -149,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     private ArrayList<String> daysInMonthArray(LocalDate date) {
         ArrayList<String> daysInMonthArray = new ArrayList<>();
         YearMonth yearMonth = YearMonth.from(date);
@@ -167,24 +168,24 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     private String monthYearFromDate(LocalDate date){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
         return date.format(formatter);
 
     }
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     public void previousMonthAction(View view){
         selectedDate = selectedDate.minusMonths(1);
         setMonthView();
     }
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     public void nextMonthAction(View view){
         selectedDate = selectedDate.plusMonths(1);
         setMonthView();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     @Override
     public void onItemClick(int position, String dayText) {
 
