@@ -61,6 +61,7 @@
         android:layout_marginRight="50dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_reg_id" />
 
