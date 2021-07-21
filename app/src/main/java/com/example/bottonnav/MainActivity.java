@@ -1,5 +1,6 @@
 package com.example.bottonnav;
 
+import android.app.Dialog;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -7,12 +8,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -32,11 +38,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener {
 
+    Button fil;
+    Dialog dialog;
     private TextView tv_id, tv_pw;
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
-
 
 
     @Override
@@ -63,12 +70,46 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             }
         });
         mBottomNV.setSelectedItemId(R.id.home);
+
+
+        RadioGroup ragroup=findViewById(R.id.rbgroup);
+        RadioButton all = findViewById(R.id.rb_all);
+       // cust=findViewById(R.id.rb_custom);
+         //all.setChecked(true);
+
+        dialog =new Dialog(MainActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog);
+
+        findViewById(R.id.filter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog();
+            }
+        });
     }
 
-    RadioGroup ragroup=findViewById(R.id.rbgroup);
-    RadioButton all = findViewById(R.id.rb_all);
-    // cust=findViewById(R.id.rb_custom);
-    // all.setChecked(true);
+    public void showDialog(){
+        dialog.show();
+
+        Button nob=dialog.findViewById(R.id.nob);
+        Button yesb=dialog.findViewById(R.id.yesb);
+        nob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                dialog.dismiss();
+            }
+        });
+
+        yesb.findViewById(R.id.yesb).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 원하는 기능 구현
+                finish();           // 앱 종료
+            }
+        });
+
+    }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         //return super.onCreateOptionsMenu(menu);
