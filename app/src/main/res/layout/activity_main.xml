@@ -10,6 +10,7 @@
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         tools:layout_editor_absoluteX="-25dp"
         tools:layout_editor_absoluteY="-44dp">
 
@@ -17,15 +18,16 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="#FFBB86FC"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme" />
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_m"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="#fff"
+        android:background="#FFBB86FC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
