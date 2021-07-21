@@ -16,7 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
-
+    //수정완료
     private EditText et_id, et_pw;
     private Button btn_login, btn_register;
 
