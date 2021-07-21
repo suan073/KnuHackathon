@@ -14,6 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class RegisterActivity extends AppCompatActivity {
+    //구현완료
 
     private EditText et_reg_id, et_reg_pw, et_reg_name, et_reg_major, et_reg_grade;
     private Button btn_assign, btn_cancel;
