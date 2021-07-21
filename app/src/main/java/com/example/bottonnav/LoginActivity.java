@@ -30,7 +30,8 @@ public class LoginActivity extends AppCompatActivity {
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
-                Intent intent = new Intent();
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
             }
         });
 
