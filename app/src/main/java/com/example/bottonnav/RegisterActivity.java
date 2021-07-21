@@ -55,6 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
+                            Toast.makeText(getApplicationContext(), "회원 등록 시도", Toast.LENGTH_SHORT).show();
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
                             if (success) {
