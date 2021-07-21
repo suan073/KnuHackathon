@@ -32,17 +32,8 @@ public class RegisterActivity extends AppCompatActivity {
         et_reg_grade = findViewById(R.id.et_reg_grade);
 
         btn_assign = findViewById(R.id.btn_assign);
-        btn_cancel = findViewById(R.id.btn_cancel);
-
-        btn_cancel.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
         // 회원가입 확인 버튼 클릭시 수행
-        btn_assign.setOnClickListener(new View.OnClickListener(){
+        btn_assign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //현재 입력되어 있는 것을 가져온다
@@ -52,12 +43,15 @@ public class RegisterActivity extends AppCompatActivity {
                 String userMajor = et_reg_major.getText().toString();
                 int userGrade = Integer.parseInt(et_reg_grade.getText().toString());
 
-                Response.Listener<String> responseListener = new Response.Listener<String>(){
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            JSONObject jsonObject = new JSONObject(response);
+
+                            JSONObject jsonObject = new JSONObject(response);     //요기가 문제
+
                             boolean success = jsonObject.getBoolean("success");
+
                             if (success) {
                                 Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
@@ -77,6 +71,15 @@ public class RegisterActivity extends AppCompatActivity {
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                 queue.add(registerRequest);
 
+            }
+        });
+
+        btn_cancel = findViewById(R.id.btn_cancel);
+        btn_cancel.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 
