@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
-            android:text="<-"
+            android:text="PREV"
             android:textColor="@color/blue"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
-            android:text="->"
+            android:text="NEXT"
             android:textColor="@color/blue"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -109,5 +109,9 @@
 
 
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
