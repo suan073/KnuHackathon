@@ -45,7 +45,7 @@ public class NoticeListAdapter extends BaseAdapter {
         TextView eventType=(TextView) v.findViewById(R.id.eventType);
 
         eventGrade.setText("관련학년: "+Integer.toString(noticeList.get(i).getEventGrade())+"학년");
-        eventMajor.setText("  단대:"+noticeList.get(i).getEventMajor()+"대학");
+        eventMajor.setText("  단대:"+noticeList.get(i).getEventMajor());
 
         eventName.setText(noticeList.get(i).getEventName());
 
