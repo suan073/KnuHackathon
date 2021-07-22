@@ -10,7 +10,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:background="@color/purple_200"
+        android:background="@color/main"
         android:gravity="center"
         android:text="추가"
         android:textColor="@color/white"
@@ -25,7 +25,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple_200"
+            android:background="@color/main"
             android:orientation="horizontal">
 
             <TextView
@@ -97,7 +97,7 @@
                 android:layout_gravity="center"
                 android:padding="3dp"
                 android:text="분류"
-                android:textColor="@color/purple_200" />
+                android:textColor="@color/main" />
 
         </LinearLayout>
     </LinearLayout>
