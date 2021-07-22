@@ -1,6 +1,7 @@
 package com.example.bottonnav;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -233,6 +234,7 @@ public class calendarFragment extends Fragment {
     public void onActivityCreated(Bundle b){
         super.onActivityCreated(b);
         btn_add = (Button) getView().findViewById(R.id.btn_add);
+        cv = (CalendarView) getView().findViewById(R.id.cv);
 
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -242,5 +244,18 @@ public class calendarFragment extends Fragment {
             }
         });
 
+
+        cv.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                Toast.makeText(getActivity(), "!", Toast.LENGTH_LONG).show();
+                //String date = (month+1) + "/" + dayOfMonth + "/" + year;
+
+                theDay = dayOfMonth;
+                theMonth = month;
+
+                //Toast.makeText(getApplicationContext(), date, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
