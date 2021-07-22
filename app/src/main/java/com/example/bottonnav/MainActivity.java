@@ -51,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(tb);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
-
         BottomNavigationView mBottomNV = findViewById(R.id.nav_m);
         mBottomNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() { //NavigationItemSelecte
             @Override
@@ -116,8 +113,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         //return super.onOptionsItemSelected(item);
         switch (item.getItemId()) {
-            case R.id.home: //설정창 버튼
-                Toast.makeText(getApplicationContext(), "환경설정 버튼 클릭됨", Toast.LENGTH_LONG).show();
+            case R.id.set: //설정창 버튼
+                //Toast.makeText(getApplicationContext(), "회원정보 확인/수정 버튼 클릭됨", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(MainActivity.this, SettingActivity.class);
                 startActivity(intent);
                 return true;
