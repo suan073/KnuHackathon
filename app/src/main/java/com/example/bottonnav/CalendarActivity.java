@@ -20,7 +20,8 @@ public class CalendarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_home);
+        setContentView(R.layout.fragment_calendar);
+        //Toast.makeText(getApplicationContext(), "ddddddddddddddddd", Toast.LENGTH_LONG).show();
 
         cv = (CalendarView) findViewById(R.id.cv);
         btn_add = (Button) findViewById(R.id.btn_add);
@@ -41,6 +42,7 @@ public class CalendarActivity extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "ddd", Toast.LENGTH_LONG).show();
                 String date = (theMonth+1) + "/" + theDay;
                 Toast.makeText(getApplicationContext(), date, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(CalendarActivity.this, AddActivity.class);

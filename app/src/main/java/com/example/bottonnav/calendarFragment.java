@@ -1,6 +1,7 @@
 package com.example.bottonnav;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -35,10 +36,14 @@ import java.util.List;
  */
 public class calendarFragment extends Fragment {
 
+
+
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -68,6 +73,7 @@ public class calendarFragment extends Fragment {
 
     private CalendarView cv;
     private int theDay, theMonth;
+    private Button btn_add;
     private ListView listView;
     private EventListAdapter adapter;
     private List<DayEventList> dayEventLists;
@@ -224,4 +230,18 @@ public class calendarFragment extends Fragment {
             }
         }
     }*/
+
+    public void onActivityCreated(Bundle b){
+        super.onActivityCreated(b);
+        btn_add = (Button) getView().findViewById(R.id.btn_add);
+
+        btn_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), AddActivity.class));
+
+            }
+        });
+
+    }
 }
