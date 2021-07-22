@@ -11,15 +11,97 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#2196F3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/courseGrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:text="1학년"
+                android:textColor="#ffffff"></TextView>
+
+            <TextView
+                android:id="@+id/courseTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:text="강의 제목"
+                android:textColor="#ffffff"
+                android:textStyle="bold"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/blue">
+            android:background="#ffffff">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                an
+                android:text="교수 이름"
+                android:id="@+id/courseProfessor"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:textColor="#000000"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3학점"
+                android:id="@+id/courseCredit"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:textColor="#000000">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1분반"
+                android:id="@+id/courseDivide"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:textColor="#000000">
+            </TextView>
+
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#ffffff">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="강의 제한 인원"
+                android:id="@+id/coursePersonnel"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:textColor="#f92a3f">
+            </TextView>
+
+            <TextView
+                android:id="@+id/courseTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:text="강의 시간대"
+                android:textColor="@color/design_default_color_primary_dark"></TextView>
+
+
+
+        </LinearLayout>
 
     </LinearLayout>
 

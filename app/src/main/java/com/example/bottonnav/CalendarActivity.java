@@ -9,10 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.Toast;
 
 public class CalendarActivity extends AppCompatActivity {
 
-    private static final String TAG = "CalendarActivity";
     private CalendarView cv;
     private Button add;
     private int theDay, theMonth;
@@ -23,21 +23,25 @@ public class CalendarActivity extends AppCompatActivity {
         setContentView(R.layout.fragment_home);
 
         cv = (CalendarView) findViewById(R.id.cv);
-        add = findViewById(R.id.btn_add);
+        add = (Button) findViewById(R.id.btn_add);
 
         cv.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                String date = (month+1) + "/" + dayOfMonth + "/" + year;
+
                 theDay = dayOfMonth;
                 theMonth = month;
-                String date = (month+1) + "/" + dayOfMonth + "/" + year;
-                Log.d(TAG, "onSelectedDayChange: mm/dd/yyyy: " + date);
+
+                Toast.makeText(getApplicationContext(), date, Toast.LENGTH_LONG).show();
             }
         });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String date = (theMonth+1) + "/" + theDay;
+                Toast.makeText(getApplicationContext(), date, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(CalendarActivity.this, AddActivity.class);
                 intent.putExtra("month", theMonth);
                 intent.putExtra("day", theDay);
