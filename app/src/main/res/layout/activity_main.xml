@@ -17,7 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="#FFBB86FC"
+            android:background="@color/main"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme" />
     </FrameLayout>
@@ -26,7 +26,7 @@
         android:id="@+id/nav_m"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="#FFBB86FC"
+        android:background="@color/main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
