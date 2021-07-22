@@ -1,6 +1,7 @@
 package com.example.bottonnav;
 
 public class Event {
+    String userID;
     int eventNum;
     String eventName;
     String eventType;
@@ -13,9 +14,19 @@ public class Event {
     int eProStartDay;
     int eProEndDay;
     String eventMajor;
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
     int eventGrade;
     String eventDetail;
     String eventLink;
+
 
     public int getEventNum() {
         return eventNum;
@@ -138,6 +149,7 @@ public class Event {
     }
 
     public Event(int eventNum, String eventName, String eventType, int eResStartMonth, int eResEndMonth, int eResStartDay, int eResEndDay, int eProStartMonth, int eProEndMonth, int eProStartDay, int eProEndDay, String eventMajor, int eventGrade, String eventDetail, String eventLink) {
+        this.userID = userID;
         this.eventNum = eventNum;
         this.eventName = eventName;
         this.eventType = eventType;
