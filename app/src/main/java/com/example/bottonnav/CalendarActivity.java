@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class CalendarActivity extends AppCompatActivity {
 
     private CalendarView cv;
-    private Button add;
+    private Button btn_add;
     private int theDay, theMonth;
 
     @Override
@@ -23,21 +23,22 @@ public class CalendarActivity extends AppCompatActivity {
         setContentView(R.layout.fragment_home);
 
         cv = (CalendarView) findViewById(R.id.cv);
-        add = (Button) findViewById(R.id.btn_add);
+        btn_add = (Button) findViewById(R.id.btn_add);
 
         cv.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                String date = (month+1) + "/" + dayOfMonth + "/" + year;
+                Toast.makeText(getApplicationContext(), "!", Toast.LENGTH_LONG).show();
+                //String date = (month+1) + "/" + dayOfMonth + "/" + year;
 
-                theDay = dayOfMonth;
-                theMonth = month;
+                //theDay = dayOfMonth;
+                //theMonth = month;
 
-                Toast.makeText(getApplicationContext(), date, Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), date, Toast.LENGTH_LONG).show();
             }
         });
 
-        add.setOnClickListener(new View.OnClickListener() {
+        btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String date = (theMonth+1) + "/" + theDay;

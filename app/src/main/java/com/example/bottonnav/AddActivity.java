@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class AddActivity extends AppCompatActivity {
 
     private Button btn_assign, btn_cancel;
+    private TextView et_add_name, et_add_type;
     private int day, month;
 
     @Override
@@ -19,12 +21,15 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-        Intent incomingIntent = getIntent();
-        day = Integer.parseInt(incomingIntent.getStringExtra("day"));
-        month = Integer.parseInt(incomingIntent.getStringExtra("month"));
+        Intent intent = getIntent();
+        day = intent.getIntExtra("day", 0);
+        month = intent.getIntExtra("month", 0);
 
         btn_assign = findViewById(R.id.btn_assign);
         btn_cancel = findViewById(R.id.btn_cancel);
+        et_add_name = findViewById(R.id.et_add_type);
+        et_add_type = findViewById(R.id.et_add_type);
+
 
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +38,7 @@ public class AddActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
     }
 
