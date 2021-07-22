@@ -62,44 +62,8 @@ public class MainActivity extends AppCompatActivity {
         mBottomNV.setSelectedItemId(R.id.home);
 
 
-       // RadioGroup ragroup=findViewById(R.id.rbgroup);
-        //RadioButton all = findViewById(R.id.rb_all);
-       // cust=findViewById(R.id.rb_custom);
-         //all.setChecked(true);
-
-        dialog =new Dialog(MainActivity.this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.dialog);
-
-       /* findViewById(R.id.filter).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog();
-            }
-        });*/
     }
 
-    public void showDialog(){
-        dialog.show();
-
-        Button nob=dialog.findViewById(R.id.nob);
-        Button yesb=dialog.findViewById(R.id.yesb);
-        nob.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                dialog.dismiss();
-            }
-        });
-
-        yesb.findViewById(R.id.yesb).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // 원하는 기능 구현
-                finish();           // 앱 종료
-            }
-        });
-
-    }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         //return super.onCreateOptionsMenu(menu);
