@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-
+/*
 public class  CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
 
     private final ArrayList<String> dayOfMonth;
@@ -42,4 +42,4 @@ public class  CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
     public interface OnItemListener{
         void onItemClick(int position, String dayText);
     }
-}
+}*/
