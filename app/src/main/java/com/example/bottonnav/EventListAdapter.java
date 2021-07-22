@@ -45,7 +45,7 @@ public class EventListAdapter extends BaseAdapter {
         TextView eventType=(TextView) v.findViewById(R.id.eventType);
 
         eventGrade.setText("관련학년: "+eventList.get(i).getEventGrade()+"학년");
-        eventMajor.setText("  단대:"+eventList.get(i).getEventMajor()+"대학");
+        eventMajor.setText("  단대:"+eventList.get(i).getEventMajor());
 
         eventName.setText(eventList.get(i).getEventName());
 

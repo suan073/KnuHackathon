@@ -152,6 +152,7 @@ public class FragmentPage2 extends Fragment {
         protected void onPreExecute() {
             try {
                 target = "http://fourhae.dothome.co.kr/Event.php?eventGrade="+ URLEncoder.encode(gradeSpinner.getSelectedItem().toString(), "UTF-8")
+                        +"&eventMajor="
                         +URLEncoder.encode(colleSpinner.getSelectedItem().toString(), "UTF-8");
 
             }
@@ -235,7 +236,7 @@ public class FragmentPage2 extends Fragment {
                 if(count == 0){
                     AlertDialog dialog;
                     AlertDialog.Builder builder = new AlertDialog.Builder(FragmentPage2.this.getActivity());
-                    dialog = builder.setMessage("조회된 강의가 없습니다.").setPositiveButton("확인", null).create();
+                    dialog = builder.setMessage("조회된 행사가 없습니다.").setPositiveButton("확인", null).create();
                     dialog.show();
                 }
                 adapter.notifyDataSetChanged();
