@@ -12,23 +12,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
         android:layout_marginTop="60dp">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@null"
             android:text="PREV"
             android:textColor="@color/blue"
+            android:background="@null"
             android:textSize="20sp"
+            android:onClick="previousMonthAction"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/monthYearTV"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:layout_width="0dp"
-            android:text="7"
+            android:text="Feb 2021"
             android:textSize="20sp"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -40,10 +42,11 @@
             android:background="@null"
             android:text="NEXT"
             android:textColor="@color/blue"
+            android:onClick="nextiousMonthAction"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

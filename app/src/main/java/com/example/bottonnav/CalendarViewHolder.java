@@ -6,13 +6,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.jetbrains.annotations.NotNull;
 
 public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-    public final TextView dayOfMonth;
-    private final  CalendarAdapter.OnItemListener onItemListener;
 
-    public CalendarViewHolder(@NonNull @NotNull View itemView, CalendarAdapter.OnItemListener onItemListener) {
+    public final TextView dayOfMonth;
+    private final  com.example.bottonnav.CalendarAdapter.OnItemListener onItemListener;
+    public CalendarViewHolder(@NonNull View itemView, com.example.bottonnav.CalendarAdapter.OnItemListener onItemListener) {
         super(itemView);
         dayOfMonth = itemView.findViewById(R.id.cellDayText);
         this.onItemListener = onItemListener;
