@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment = fragmentManager.findFragmentByTag(tag);
         if (fragment == null) {
             if (id == R.id.home) {
-                fragment = new FragmentPage1();
+                fragment = new calendarFragment();
 
             } else if (id == R.id.notice) {
 

@@ -105,11 +105,17 @@ public class FragmentPage2 extends Fragment {
                 allorchoo=rab.getText().toString();
 
                 if (allorchoo.equals("선택")) {
+                    gradeSpinner.setEnabled(true);
+                    colleSpinner.setEnabled(true);
                    gradeAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.grade, android.R.layout.simple_dropdown_item_1line);
                     gradeSpinner.setAdapter(gradeAdapter);
 
                     colleAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.colle, android.R.layout.simple_dropdown_item_1line);
                     colleSpinner.setAdapter(colleAdapter);
+                }
+                else {
+                    gradeSpinner.setEnabled(false);
+                    colleSpinner.setEnabled(false);
                 }
             }
         });
