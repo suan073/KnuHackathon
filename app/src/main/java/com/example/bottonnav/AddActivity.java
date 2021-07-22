@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class AddActivity extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class AddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
+
 
         Intent incomingIntent = getIntent();
         day = Integer.parseInt(incomingIntent.getStringExtra("day"));
