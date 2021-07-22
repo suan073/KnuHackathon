@@ -24,8 +24,10 @@
         <activity android:name=".SettingActivity" />
         <activity android:name=".LinkActivity" />
         <activity android:name=".webView" />
-        <activity android:name=".CalendarActivity" />
-        <activity android:name=".AddActivity"></activity>
+        <activity android:name=".CalendarActivity"/>
+        <activity android:name=".AddActivity">
+
+        </activity>
     </application>
 
 </manifest>
