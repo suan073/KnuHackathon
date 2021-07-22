@@ -31,8 +31,8 @@ public class CalendarActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "!", Toast.LENGTH_LONG).show();
                 //String date = (month+1) + "/" + dayOfMonth + "/" + year;
 
-                //theDay = dayOfMonth;
-                //theMonth = month;
+                theDay = dayOfMonth;
+                theMonth = month;
 
                 //Toast.makeText(getApplicationContext(), date, Toast.LENGTH_LONG).show();
             }
