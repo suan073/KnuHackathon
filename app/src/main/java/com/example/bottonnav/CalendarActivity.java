@@ -41,6 +41,7 @@ public class CalendarActivity extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "ddd", Toast.LENGTH_LONG).show();
                 String date = (theMonth+1) + "/" + theDay;
                 Toast.makeText(getApplicationContext(), date, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(CalendarActivity.this, AddActivity.class);
