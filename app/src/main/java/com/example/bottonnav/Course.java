@@ -139,7 +139,7 @@ public class Course {
         this.eventLink = eventLink;
     }
 
-    public Course(String userID, int eventNum, String eventName, String eventType, int eResStartMonth, int eResEndMonth, int eResStartDay, int eResEndDay, int eProStartMonth, int eProEndMonth, int eProStartDay, int eProEndDay, String eventMajor, int eventGrade, String eventDetail, String eventLink) {
+    public Course(int eventNum, String eventName, String eventType, int eResStartMonth, int eResEndMonth, int eResStartDay, int eResEndDay, int eProStartMonth, int eProEndMonth, int eProStartDay, int eProEndDay, String eventMajor, int eventGrade, String eventDetail, String eventLink) {
         this.eventNum = eventNum;
         this.eventName = eventName;
         this.eventType = eventType;

@@ -44,13 +44,13 @@ public class NoticeListAdapter extends BaseAdapter {
         TextView eResEndDay=(TextView) v.findViewById(R.id.eResEndDay);
         TextView eventType=(TextView) v.findViewById(R.id.eventType);
 
-        eventGrade.setText("관련학년: "+noticeList.get(i).getEventGrade()+"학년");
+        eventGrade.setText("관련학년: "+Integer.toString(noticeList.get(i).getEventGrade())+"학년");
         eventMajor.setText("  단대:"+noticeList.get(i).getEventMajor()+"대학");
 
         eventName.setText(noticeList.get(i).getEventName());
 
-        eResEndMonth.setText("신청마감:"+noticeList.get(i).geteResEndMonth()+"/");
-        eResEndDay.setText(noticeList.get(i).geteResEndDay());
+        eResEndMonth.setText("신청마감:"+Integer.toString(noticeList.get(i).geteResEndMonth())+"/");
+        eResEndDay.setText(Integer.toString(noticeList.get(i).geteResEndDay()));
 
         eventType.setText("  분류:"+noticeList.get(i).getEventType());
 

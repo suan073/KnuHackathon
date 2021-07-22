@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -26,6 +27,8 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -81,6 +84,12 @@ public class FragmentPage2 extends Fragment {
 
     private String allorchoo;
 
+    private ListView listView;
+    private NoticeListAdapter adapter;
+    private List<Course> courseList;
+
+
+
     @Override
     public void onActivityCreated(Bundle b){
         super.onActivityCreated(b);
@@ -104,6 +113,13 @@ public class FragmentPage2 extends Fragment {
                 }
             }
         });
+
+        listView = (ListView)getView().findViewById(R.id.listview);
+        courseList = new ArrayList<Course>();
+        adapter = new NoticeListAdapter(getContext().getApplicationContext(), courseList);
+        listView.setAdapter(adapter);
+
+
 
         Button search = (Button)getView().findViewById(R.id.search);
         search.setOnClickListener(new View.OnClickListener(){
@@ -169,10 +185,55 @@ public class FragmentPage2 extends Fragment {
         @Override
         protected void onPostExecute(String result) {
             try{
-                AlertDialog dialog;
-                AlertDialog.Builder builder = new AlertDialog.Builder(FragmentPage2.this.getContext());
-                dialog = builder.setMessage(result).setPositiveButton("확인", null).create();
-                dialog.show();
+                courseList.clear();
+                JSONObject jsonObject = new JSONObject(result);
+                JSONArray jsonArray = jsonObject.getJSONArray("response");
+                int count = 0;
+                int eventNum;
+                String eventName;
+                String eventType;
+                int eResStartMonth;
+                int eResEndMonth;
+                int eResStartDay;
+                int eResEndDay;
+                int eProStartMonth;
+                int eProEndMonth;
+                int eProStartDay;
+                int eProEndDay;
+                String eventMajor;
+                int eventGrade;
+                String eventDetail;
+                String eventLink;
+                while(count<jsonArray.length()){
+                    JSONObject object = jsonArray.getJSONObject(count);
+                    eventNum = object.getInt("eventNum");
+                    eventName = object.getString("eventName");
+                    eventType = object.getString("eventType");
+                    eResStartMonth = object.getInt("eResStartMonth");
+                    eResEndMonth = object.getInt("eResEndMonth");
+                    eResStartDay = object.getInt("eResStartDay");
+                    eResEndDay = object.getInt("eResEndDay");
+                    eProStartMonth = object.getInt("eProStartMonth");
+                    eProEndMonth = object.getInt("eProEndMonth");
+                    eProStartDay = object.getInt("eProStartDay");
+                    eProEndDay = object.getInt("eProEndDay");
+                    eventMajor = object.getString("eventMajor");
+                    eventGrade = object.getInt("eventGrade");
+                    eventDetail = object.getString("eventDetail");
+                    eventLink = object.getString("eventLink");
+                    Course couse = new Course(eventNum, eventName, eventType, eResStartMonth, eResEndMonth, eResStartDay, eResEndDay, eProStartMonth, eProEndMonth, eProStartDay, eProEndDay, eventMajor, eventGrade, eventDetail, eventLink);
+                    courseList.add(couse);
+                    count++;
+                }
+
+                if(count == 0){
+                    AlertDialog dialog;
+                    AlertDialog.Builder builder = new AlertDialog.Builder(FragmentPage2.this.getActivity());
+                    dialog = builder.setMessage("조회된 강의가 없습니다.").setPositiveButton("확인", null).create();
+                    dialog.show();
+                }
+                adapter.notifyDataSetChanged();
+
             }
             catch(Exception e){
                 e.printStackTrace();
