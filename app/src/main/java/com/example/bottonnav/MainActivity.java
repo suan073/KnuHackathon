@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
     Button fil;
     Dialog dialog;
     private TextView tv_id, tv_pw;
+    private Button btn_add, btn_cancel;
+    private TextView et_add_name, et_add_type;
+    private int day, month;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         mBottomNV.setSelectedItemId(R.id.home);
-
 
     }
 
@@ -124,7 +126,8 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.setReorderingAllowed(true);
         fragmentTransaction.commitNow();
 
-
     }
+
+
 
 }

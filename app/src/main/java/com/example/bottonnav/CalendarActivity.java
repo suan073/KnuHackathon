@@ -20,7 +20,7 @@ public class CalendarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_home);
+        setContentView(R.layout.fragment_calendar);
 
         cv = (CalendarView) findViewById(R.id.cv);
         btn_add = (Button) findViewById(R.id.btn_add);
