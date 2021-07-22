@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
                 fragment = new FragmentPage2();
             } else {
-                fragment = new FragmentPage3();
+                fragment = new linkFragment();
             }
 
             fragmentTransaction.add(R.id.frame_container, fragment, tag);

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/purple_200"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".LinkActivity">
 
     <WebView
         android:id="@+id/webview"
