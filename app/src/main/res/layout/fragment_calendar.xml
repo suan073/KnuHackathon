@@ -8,55 +8,33 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:layout_marginTop="70dp"
-        android:orientation="vertical">
-
     <CalendarView
         android:id="@+id/cv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:orientation="horizontal">
+        <ListView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="10dp">
-
-
-                <Button
-                    android:id="@+id/btn_add"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="add" />
-            </LinearLayout>
-
-            <ListView
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1">
-
-            </ListView>
-        </LinearLayout>
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="120dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:text="add" />
     </LinearLayout>
-
 </LinearLayout>

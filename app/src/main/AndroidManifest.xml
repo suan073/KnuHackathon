@@ -22,9 +22,6 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SettingActivity" />
-        <activity android:name=".LinkActivity" />
-        <activity android:name=".webView" />
-        <activity android:name=".CalendarActivity"/>
         <activity android:name=".AddActivity">
 
         </activity>

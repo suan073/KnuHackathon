@@ -49,7 +49,7 @@ public class EventListAdapter extends BaseAdapter {
 
         eventName.setText(eventList.get(i).getEventName());
 
-        eResEndMonth.setText("신청마감:"+eventList.get(i).geteResEndMonth()+"/");
+        eResEndMonth.setText("신청마감:"+eventList.get(i).geteResEndMonth()+" /");
         eResEndDay.setText(eventList.get(i).geteResEndDay());
 
         eventType.setText("  분류:"+eventList.get(i).getEventType());
