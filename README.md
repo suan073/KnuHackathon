@@ -20,4 +20,4 @@
 서버도메인 : fourhae.dothome.co.kr
 MySQL관리 : fourhae.dothome.co.kr/myadmin
 DB 아이디 : fourhae
-DB 암호 : 
+DB 암호 : qlalfqjsgh124*
