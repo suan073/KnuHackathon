@@ -170,6 +170,8 @@
                 android:layout_weight="1"
                 android:layout_margin="0dp"
                 android:text="확인"
+                android:textColor="@color/white"
+                android:background="#A6E91E63"
                 android:textSize="24sp" />
 
             <Button
@@ -178,6 +180,8 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:layout_margin="0dp"
+                android:textColor="@color/white"
+                android:background="#A6E91E63"
                 android:text="취소"
                 android:textSize="24sp" />
 
