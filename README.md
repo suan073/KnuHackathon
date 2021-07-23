@@ -18,3 +18,6 @@
 4. 캘린더를 통해 자신의 일정을 추가, 수정 등 관리할 수 있는 기능(미완성)
 
 서버도메인 : fourhae.dothome.co.kr
+MySQL관리 : fourhae.dothome.co.kr/myadmin
+DB 아이디 : fourhae
+DB 암호 : 
