@@ -7,24 +7,20 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegisterRequest extends StringRequest {
+public class AddRequest extends StringRequest {
     //구현 완료
     // 서버 url 설정 (php 파일 연동)
-    final static private String URL = "http://fourhae.dothome.co.kr/Register.php";
+    final static private String URL = "http://fourhae.dothome.co.kr/EventAdd.php";
     private Map<String, String> map;
 
 
-    public RegisterRequest(String userID, String userPassword, String userName,String userMajor, int userGrade, Response.Listener<String> listener){
+    public AddRequest(String userID, int eventNum, Response.Listener<String> listener){
         super(Method.POST, URL,listener,null);
 
         map = new HashMap<>();
         map.put("userID",userID);
-        map.put("userPassword", userPassword);
-        map.put("userName",userName);
-        map.put("userMajor",userMajor);
-        map.put("userGrade",userGrade+"");
+        map.put("userGrade",eventNum+"");
     }
-
 
     @Override
     protected Map<String, String> getParams() throws AuthFailureError {

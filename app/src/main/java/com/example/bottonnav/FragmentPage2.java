@@ -122,7 +122,7 @@ public class FragmentPage2 extends Fragment {
 
         listView = (ListView)getView().findViewById(R.id.listview);
         courseList = new ArrayList<Course>();
-        adapter = new NoticeListAdapter(getContext().getApplicationContext(), courseList);
+        adapter = new NoticeListAdapter(getContext().getApplicationContext(), courseList, this);
         listView.setAdapter(adapter);
 
 

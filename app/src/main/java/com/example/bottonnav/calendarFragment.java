@@ -83,23 +83,9 @@ public class calendarFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 /*
-        cv = (CalendarView) getView().findViewById(R.id.cv);
-        cv.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                //String date = (month+1) + "/" + dayOfMonth + "/" + year;
-
-                theDay = dayOfMonth;
-                theMonth = month;
-
-                //Toast.makeText(getApplicationContext(), date, Toast.LENGTH_LONG).show();
-            }
-        });
-
-
         listView = (ListView)getView().findViewById(R.id.listview);
         dayEventLists = new ArrayList<DayEventList>();
-        adapter = new EventListAdapter(getContext().getApplicationContext(), dayEventLists);
+        adapter = new EventListAdapter(getContext().getApplicationContext(), dayEventLists, this);
         listView.setAdapter(adapter);
 */
 
@@ -109,25 +95,13 @@ public class calendarFragment extends Fragment {
         }
     }
 
-
-    /*
-    @Override
-    public void onActivityCreated(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-
-
-
-
-    }*/
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_calendar, container, false);
     }
-    /*
+/*
     class BackgroundTask extends AsyncTask<Void, Void, String> {
 
         String target;
@@ -230,8 +204,10 @@ public class calendarFragment extends Fragment {
                 e.printStackTrace();
             }
         }
-    }*/
+    }
 
+
+ */
     public void onActivityCreated(Bundle b){
         super.onActivityCreated(b);
         btn_add = (Button) getView().findViewById(R.id.btn_add);
@@ -244,7 +220,7 @@ public class calendarFragment extends Fragment {
 
             }
         });
-
+/*
 
         cv.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -257,6 +233,8 @@ public class calendarFragment extends Fragment {
 
                 //Toast.makeText(getApplicationContext(), date, Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
     }
+
+
 }

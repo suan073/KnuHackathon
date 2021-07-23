@@ -1,10 +1,20 @@
 package com.example.bottonnav;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -13,7 +23,7 @@ public class NoticeListAdapter extends BaseAdapter {
     private Context context;
     private List<Course> noticeList;
 
-    public NoticeListAdapter(Context context, List<Course> noticeList) {
+    public NoticeListAdapter(Context context, List<Course> noticeList, FragmentPage2 fragmentPage2) {
         this.context = context;
         this.noticeList = noticeList;
     }
@@ -53,7 +63,6 @@ public class NoticeListAdapter extends BaseAdapter {
         eResEndDay.setText(Integer.toString(noticeList.get(i).geteResEndDay()));
 
         eventType.setText("  분류:"+noticeList.get(i).getEventType());
-
         return v;
     }
 }
